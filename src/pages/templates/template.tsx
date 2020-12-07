@@ -29,11 +29,12 @@ const Template = ({ pageContext: { flavourTop, flavourMiddle, flavourBottom, rec
     const [Statemessage, setmessage] = useState(message);
     const [StatelollyPath, setlollyPath] = useState(lollyPath);
     const [Url, setUrl] = useState("");
+    const isBrowser = typeof window !== `undefined`;
     
     if(message){
 
     }else{
-        const isBrowser = typeof window !== `undefined`;
+        
         if(isBrowser){
             const url=location.pathname.split("/");
             const [SpecificlolliInfo] = useMutation(GETSpecificLolly);
@@ -80,7 +81,7 @@ const Template = ({ pageContext: { flavourTop, flavourMiddle, flavourBottom, rec
                         <br/>
                         <div> You can <Link to="/createNew"> make your own</Link>{" "}</div>
                         <div className="urlFontsize">
-                            {/* <div> Share this Url: <Link to=""> {location.origin+location.pathname}</Link></div> */}
+                            <div> Share this Url: <Link to=""> {isBrowser?location.origin+location.pathname:StatelollyPath}</Link></div>
                         </div>
                     </div>
                 </div>
