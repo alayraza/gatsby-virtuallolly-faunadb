@@ -33,15 +33,15 @@ const Template = ({ pageContext: { flavourTop, flavourMiddle, flavourBottom, rec
     if(message){
 
     }else{
-        const url="QHEoaWkvT";
+        const url=location.pathname.split("/");
         const [SpecificlolliInfo] = useMutation(GETSpecificLolly);
         const Spresult = SpecificlolliInfo({
             variables : {
-                lollyPath:url
+                lollyPath:url[url.length -1]
             }
         }).then(value => {
-            if(url!=Url){
-                setUrl(url);
+            if(url[url.length -1]!=Url){
+                setUrl(url[url.length -1]);
                 setflavourTop(value.data.SpecificlolliInfo.flavourTop)
                 setflavourMiddle(value.data.SpecificlolliInfo.flavourMiddle)
                 setflavourBottom(value.data.SpecificlolliInfo.flavourBottom)
@@ -77,7 +77,7 @@ const Template = ({ pageContext: { flavourTop, flavourMiddle, flavourBottom, rec
                         <br/>
                         <div> You can <Link to="/createNew"> make your own</Link>{" "}</div>
                         <div className="urlFontsize">
-                            {/* <div> Share this Url: <Link to=""> {location.origin+location.pathname}</Link></div> */}
+                            <div> Share this Url: <Link to=""> {location.origin+location.pathname}</Link></div>
                         </div>
                     </div>
                 </div>
