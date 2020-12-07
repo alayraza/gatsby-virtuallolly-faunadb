@@ -1,22 +1,29 @@
+import { navigate } from "gatsby";
 import React from "react"
-import { Link } from "gatsby"
+import Header from "../component/Header"
+import Lolly from '../component/Lolly'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+export default function Home() {
+  return (
+    <div className="container">
+      <Header />
+      <div className="listLollies">
+        <div>
+          <Lolly fillLollyTop="#d52358" fillLollyMiddle="#e95946" fillLollyBottom="#deaa43"  />
+        </div> 
+        <div>
+          <Lolly fillLollyTop="red" fillLollyMiddle="green" fillLollyBottom="blue"  />
+        </div>  
+      </div>
+      <input type="button" value="Create New Lolly"
+        onClick={
+          ()=>{
+            navigate("/createNew");
+          }
+        }
+      ></input>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
 
-export default IndexPage
+  );
+}
