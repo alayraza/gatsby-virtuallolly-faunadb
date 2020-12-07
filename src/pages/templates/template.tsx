@@ -29,12 +29,11 @@ const Template = ({ pageContext: { flavourTop, flavourMiddle, flavourBottom, rec
     const [Statemessage, setmessage] = useState(message);
     const [StatelollyPath, setlollyPath] = useState(lollyPath);
     const [Url, setUrl] = useState("");
-    const isBrowser = typeof window !== `undefined`;
+    const isBrowser = typeof location !== `undefined`;
     
     if(message){
 
     }else{
-        
         if(isBrowser){
             const url=location.pathname.split("/");
             const [SpecificlolliInfo] = useMutation(GETSpecificLolly);
