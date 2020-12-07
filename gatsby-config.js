@@ -10,7 +10,7 @@ module.exports = {
       fieldName: "lolliesInfo",
       // Url to query from
       url:
-        "http://localhost:8888/.netlify/functions/virtuallolly",
+        "https://suspicious-hypatia-df7d44.netlify.app/.netlify/functions/virtuallolly",
     },
   }],
 }
