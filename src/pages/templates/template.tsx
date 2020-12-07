@@ -77,7 +77,7 @@ const Template = ({ pageContext: { flavourTop, flavourMiddle, flavourBottom, rec
                         <br/>
                         <div> You can <Link to="/createNew"> make your own</Link>{" "}</div>
                         <div className="urlFontsize">
-                            <div> Share this Url: <Link to=""> {location.origin+location.pathname}</Link></div>
+                            {/* <div> Share this Url: <Link to=""> {location.origin+location.pathname}</Link></div> */}
                         </div>
                     </div>
                 </div>
