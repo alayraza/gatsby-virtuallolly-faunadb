@@ -9,8 +9,7 @@ module.exports = {
       // This is field under which it's accessible
       fieldName: "lolliesInfo",
       // Url to query from
-      url:
-        "https://suspicious-hypatia-df7d44.netlify.app/.netlify/functions/virtuallolly",
+      url: "/.netlify/functions/virtuallolly",
     },
   }],
 }
