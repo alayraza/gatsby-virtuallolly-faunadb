@@ -33,15 +33,15 @@ const Template = ({ pageContext: { flavourTop, flavourMiddle, flavourBottom, rec
     if(message){
 
     }else{
-        const url=location.pathname.split("/");
+        const url="QHEoaWkvT";
         const [SpecificlolliInfo] = useMutation(GETSpecificLolly);
         const Spresult = SpecificlolliInfo({
             variables : {
-                lollyPath:url[url.length -1]
+                lollyPath:url
             }
         }).then(value => {
-            if(url[url.length -1]!=Url){
-                setUrl(url[url.length -1]);
+            if(url!=Url){
+                setUrl(url);
                 setflavourTop(value.data.SpecificlolliInfo.flavourTop)
                 setflavourMiddle(value.data.SpecificlolliInfo.flavourMiddle)
                 setflavourBottom(value.data.SpecificlolliInfo.flavourBottom)
