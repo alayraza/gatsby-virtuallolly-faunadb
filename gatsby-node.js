@@ -44,9 +44,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
 exports.onCreatePage = async ({ page, actions }) => {
     const { createPage } = actions
-    if (page.path.match(/^\/templates/)) {
+    // if (page.path.match(/^\/templates/)) {
+        console.log("page",page);
       page.matchPath = "/templates/template/*"
       createPage(page)
-    }
+    // }
 }
 
